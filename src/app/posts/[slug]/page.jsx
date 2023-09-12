@@ -36,13 +36,15 @@ const singlePage = async ({ params }) => {
             )}
             <div className={styles.userTextContainer}>
               <span className={styles.username}>{data?.user.name}</span>
-              <span className={styles.date}>01.01.2023</span>
+              <span className={styles.date}>
+                {data?.createdAt.substring(0, 10)}
+              </span>
             </div>
           </div>
         </div>
         {data?.img && (
           <div className={styles.imageContainer}>
-            <Image src="/p1.jpeg" alt="" className={styles.image} fill />
+            <Image src={data.img} alt="" className={styles.image} fill />
           </div>
         )}
       </div>
